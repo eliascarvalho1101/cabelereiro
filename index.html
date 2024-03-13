@@ -1,0 +1,81 @@
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Barbeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Agendamento de Barbeiro</h1>
+
+  <section class="barbeiro">
+    <img src="barbeiro.jpg" alt="Foto do Barbeiro">
+    <h2>João Barbeiro</h2>
+    <p>Barbeiro experiente com mais de 10 anos de atuação.</p>
+  </section>
+
+  <section class="servicos">
+    <h2>Escolha o serviço desejado:</h2>
+    <ul>
+      <li class="servico">
+        <h3>Corte de cabelo</h3>
+        <p>R$ 50,00</p>
+        <button onclick="location.href='#servico-1'">Selecionar</button>
+      </li>
+      <li class="servico">
+        <h3>Barba</h3>
+        <p>R$ 30,00</p>
+        <button onclick="location.href='#servico-2'">Selecionar</button>
+      </li>
+      <li class="servico">
+        <h3>Cabelo e Barba</h3>
+        <p>R$ 70,00</p>
+        <button onclick="location.href='#servico-3'">Selecionar</button>
+      </li>
+      <li class="servico">
+        <h3>Hidratação capilar</h3>
+        <p>R$ 80,00</p>
+        <button onclick="location.href='#servico-4'">Selecionar</button>
+      </li>
+      <li class="servico">
+        <h3>Relaxamento capilar</h3>
+        <p>R$ 100,00</p>
+        <button onclick="location.href='#servico-5'">Selecionar</button>
+      </li>
+    </ul>
+  </section>
+
+  <section id="servico-1" class="servico-escondido">
+    <h2>Serviço Selecionado:</h2>
+    <h3>Corte de cabelo</h3>
+    <p>Valor: R$ 50,00</p>
+    <p>Duração: 30 minutos</p>
+    <button onclick="location.href='#data-1'">Selecionar Data</button>
+  </section>
+
+  <section id="data-1" class="data-escondido">
+    <h2>Selecione a Data:</h2>
+    <form action="#horario-1" method="get">
+      <input type="hidden" name="servico_id" value="1">
+      <label for="data">Data:</label>
+      <input type="date" id="data" name="data" min="2023-11-14" max="2023-11-21">
+      <button type="submit">Selecionar Horário</button>
+    </form>
+  </section>
+
+  <section id="horario-1" class="horario-escondido">
+    <h2>Selecione o Horário:</h2>
+    <form action="confirmar_agendamento.html" method="get">
+      <input type="hidden" name="servico_id" value="1">
+      <input type="hidden" name="data" value="2023-11-14">
+      <ul>
+        <li>
+          <input type="radio" id="8:00" name="hora" value="08:00">
+          <label for="8:00">8:00</label>
+        </li>
+        <li>
+          <input type="radio" id="8:20" name="hora" value="08:20">
+          <label for="8:20">8:20</label>
+        </li>
+        
